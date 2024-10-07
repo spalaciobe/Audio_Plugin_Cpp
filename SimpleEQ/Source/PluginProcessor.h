@@ -107,10 +107,6 @@ private:
     template<typename ChainType, typename CoefficientType> 
     void updateCutFilter(ChainType& leftLowCut, const CoefficientType& cutCoefficients, const Slope& lowCutSlope)
     {
-        //auto cutCoefficients = juce::dsp::FilterDesign<float>::designIIRHighpassHighOrderButterworthMethod(chainSettings.lowCutFreq, getSampleRate(), 2 * (chainSettings.lowCutSlope + 1));
-
-        //auto& leftLowCut = leftChain.get<ChainPositions::LowCut>();
-
         leftLowCut.template setBypassed<0>(true);
         leftLowCut.template setBypassed<1>(true);
         leftLowCut.template setBypassed<2>(true);
@@ -139,6 +135,11 @@ private:
             }
         }
     }
+
+    void updateLowCutFilters(const ChainSettings& chainSettings);
+    void updateHighCutFilters(const ChainSettings& chainSettings);
+
+    void updateFilters();
 
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SimpleEQAudioProcessor)
