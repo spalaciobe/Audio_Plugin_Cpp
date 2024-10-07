@@ -46,11 +46,11 @@
       </OUTPUTS>
     </LAYOUT>
   </FILTER>
-  <FILTER uid="5" x="0.56625" y="0.5181451612903226" useARA="0" uiLastX_Normal="1026"
-          uiLastY_Normal="311" uiopen_Normal="0">
+  <FILTER uid="5" x="0.56625" y="0.5181451612903226" useARA="0" uiLastX_Normal="1060"
+          uiLastY_Normal="303" uiopen_Normal="1">
     <PLUGIN name="SimpleEQ" format="VST3" category="Fx" manufacturer="yourcompany"
             version="1.0.0" file="D:\Documentos\Portafolio\Audio_Plugin_Cpp\SimpleEQ\Builds\VisualStudio2022\x64\Debug\VST3\SimpleEQ.vst3\Contents\x86_64-win\SimpleEQ.vst3"
-            uniqueId="ee9feb2e" isInstrument="0" fileTime="1926491f744" infoUpdateTime="19264bf8a59"
+            uniqueId="ee9feb2e" isInstrument="0" fileTime="192671a28fd" infoUpdateTime="192671cc1cb"
             numInputs="2" numOutputs="2" isShell="0" hasARAExtension="0"
             uid="e951a5ef"/>
     <STATE>191.VMjLgXK....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOVMEUy.Ea0cVZtMEcgQWY9vSRC8Vav8lak4Fc9XCLt3hKt3hKt3hKt3hYRUUSTEETIckVwTjQisVTTgkdEYjKAQjYPQSPWgUdMcjKAQjct3hdA4hKt3hKt3hKtnTUv.UQAslXuk0UXoWUFE0YQcEV77RRC8Vav8lak4Fc9vyKVMEUy.Ea0cVZtMEcgQWY9..</STATE>
@@ -74,11 +74,11 @@
       <OUTPUTS/>
     </LAYOUT>
   </FILTER>
-  <FILTER uid="15" x="0.57" y="0.155241935483871" useARA="0" uiLastX_Normal="48"
-          uiLastY_Normal="155" uiopen_Normal="1">
+  <FILTER uid="15" x="0.5675" y="0.1693548387096774" useARA="0" uiLastX_Normal="35"
+          uiLastY_Normal="154" uiopen_Normal="1">
     <PLUGIN name="AudioFilePlayer" format="VST3" category="Fx" manufacturer="Matkat Music LLC"
             version="1.0.0" file="D:\JUCE\extras\AudioFilePlayer\Builds\VisualStudio2022\x64\Debug\VST3\AudioFilePlayer.vst3\Contents\x86_64-win\AudioFilePlayer.vst3"
-            uniqueId="79fe81c" isInstrument="0" fileTime="19264b7867a" infoUpdateTime="19264bf8a5a"
+            uniqueId="79fe81c" isInstrument="0" fileTime="19264b7867a" infoUpdateTime="192671cc1cb"
             numInputs="2" numOutputs="2" isShell="0" hasARAExtension="0"
             uid="e95d02c7"/>
     <STATE>344.VMjLg7T....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOVMEUy.Ea0cVZtMEcgQWY9vSRC8Vav8lak4Fc9DyMz3BTIISX1UEaho2ZVkUdAAkKAwDUigWRWkEcQ0VTucmUY4BQlUUQLolShUELhsVRxHlXMcUVnUTLhIVT5ElLzXTX0UjQYk2cvP0RIUkTLcGUQgUPRsjYHQEVzMlUXgWQrEVaAgVVqUjQiQmK3Q0aIcEVtEDdV8TVrk0aMYkVmcmQH0TUxH1aMYDRVslQYsFNVcEc5YjX44hKt3hKt3hKt3hKt3hYRUUSTEETIckVwTjQisVTTgkdEYjKAQjYPQSPWgUdMcjKAQjct3hdA4hKt3hKt3hKtnTUv.UQAslXuk0UXoWUFE0YQcEV77RRC8Vav8lak4Fc9vyKVMEUy.Ea0cVZtMEcgQWY9..</STATE>
