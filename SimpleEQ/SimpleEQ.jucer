@@ -32,7 +32,8 @@
   <EXPORTFORMATS>
     <VS2022 targetFolder="Builds/VisualStudio2022">
       <CONFIGURATIONS>
-        <CONFIGURATION isDebug="1" name="Debug" targetName="SimpleEQ"/>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="SimpleEQ" headerPath="D:\Documentos\Portafolio\Audio_Plugin_Cpp\SimpleEQ"
+                       libraryPath="D:\Documentos\Portafolio\Audio_Plugin_Cpp\SimpleEQ\JuceLibraryCode"/>
         <CONFIGURATION isDebug="0" name="Release" targetName="SimpleEQ"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
