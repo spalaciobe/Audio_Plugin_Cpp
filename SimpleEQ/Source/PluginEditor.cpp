@@ -65,29 +65,44 @@ void LookAndFeel::drawToggleButton(juce::Graphics &g, juce::ToggleButton &toggle
 {
     using namespace juce;
 
-    Path powerButton;
+    if (auto pb = dynamic_cast<PowerButton*>(&toggleButton))
+    {
+		Path powerButton;
 
-    auto bounds = toggleButton.getLocalBounds();
-    auto size = jmin(bounds.getWidth(), bounds.getHeight()) - 6;
-    auto r = bounds.withSizeKeepingCentre(size, size).toFloat();
+		auto bounds = toggleButton.getLocalBounds();
+		auto size = jmin(bounds.getWidth(), bounds.getHeight()) - 6;
+		auto r = bounds.withSizeKeepingCentre(size, size).toFloat();
 
-    float ang = 30.f;
+		float ang = 30.f;
 
-    size -= 6;
+		size -= 6;
 
-    powerButton.addCentredArc(r.getCentreX(), r.getCentreY(), size * 0.5, size * 0.5, 0.f, degreesToRadians(ang), degreesToRadians(360.f - ang), true);
+		powerButton.addCentredArc(r.getCentreX(), r.getCentreY(), size * 0.5, size * 0.5, 0.f, degreesToRadians(ang), degreesToRadians(360.f - ang), true);
 
-    powerButton.startNewSubPath(r.getCentreX(), r.getY()+1);
-    powerButton.lineTo(r.getCentre());
+		powerButton.startNewSubPath(r.getCentreX(), r.getY() + 1);
+		powerButton.lineTo(r.getCentre());
 
-    PathStrokeType pst(2.f, PathStrokeType::JointStyle::curved);
+		PathStrokeType pst(2.f, PathStrokeType::JointStyle::curved);
+
+		auto color = toggleButton.getToggleState() ? Colours::dimgrey : Colour(0u, 172u, 1u);
+
+		g.setColour(color);
+		g.strokePath(powerButton, pst);
+    }
+    else if (auto* analizerButton = dynamic_cast<AnalizerButton*>(&toggleButton))
+    {
+		auto color = ! toggleButton.getToggleState() ? Colours::dimgrey : Colour(0u, 172u, 1u);
+
+        g.setColour(color);
+
+        auto bounds = toggleButton.getLocalBounds();
+        g.drawRect(bounds);
+
+
+        g.strokePath(analizerButton->randomPath, PathStrokeType(1.f));
+
+    }
     
-    auto color = toggleButton.getToggleState() ? Colours::dimgrey : Colour(0u, 172u, 1u);
-
-    g.setColour(color);
-    g.strokePath(powerButton, pst);
-
-    //g.drawEllipse(r, 2);
 }
 
 void RotarySliderWithLabels::paint(juce::Graphics& g)
@@ -609,6 +624,8 @@ SimpleEQAudioProcessorEditor::SimpleEQAudioProcessorEditor(SimpleEQAudioProcesso
     peakBypassButton.setLookAndFeel(&lnf);
 	lowCutBypassButton.setLookAndFeel(&lnf);
 	highCutBypassButton.setLookAndFeel(&lnf);
+	analyzerEnabledButton.setLookAndFeel(&lnf);
+
 
     setSize (600, 480);
 }
@@ -618,6 +635,8 @@ SimpleEQAudioProcessorEditor::~SimpleEQAudioProcessorEditor()
 	peakBypassButton.setLookAndFeel(nullptr);
 	lowCutBypassButton.setLookAndFeel(nullptr);
 	highCutBypassButton.setLookAndFeel(nullptr);
+	analyzerEnabledButton.setLookAndFeel(nullptr);
+
 }
 
 //==============================================================================
@@ -634,6 +653,15 @@ void SimpleEQAudioProcessorEditor::resized()
     // subcomponents in your editor..
 
     auto bounds = getLocalBounds();
+
+    auto analyzerEnabledArea = bounds.removeFromTop(25);
+    analyzerEnabledArea.setWidth(100);
+    analyzerEnabledArea.setX(5);
+	analyzerEnabledArea.removeFromTop(2);
+    
+    analyzerEnabledButton.setBounds(analyzerEnabledArea);
+    
+    bounds.removeFromTop(5);
 
     auto responseArea = bounds.removeFromTop(bounds.getHeight() * .25);
 
